@@ -8,17 +8,12 @@ AI-agent-friendly command line for Silicon Alchemists' customized Plane deployme
 
 ## Homebrew installation
 
-After a release is published, install the standalone binary on macOS or Linux with:
-
-```bash
-brew install --formula https://raw.githubusercontent.com/RenderCoder/plane-cli/main/Formula/plane-cli.rb
-```
-
-To make the Formula available under a local tap name instead, add this repository explicitly and install it:
+Homebrew 7 requires an explicit tap URL (this repository is not named `homebrew-plane-cli`) and `brew trust` for third-party formulae:
 
 ```bash
 brew tap RenderCoder/plane-cli https://github.com/RenderCoder/plane-cli
-brew install plane-cli
+brew trust --tap rendercoder/plane-cli
+brew install --formula rendercoder/plane-cli/plane-cli
 ```
 
 The Homebrew package does not need Bun at runtime. Verify it with:

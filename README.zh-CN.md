@@ -8,17 +8,12 @@
 
 ## Homebrew 安装
 
-发布完成后，macOS 或 Linux 用户可通过一条 Homebrew 命令安装：
-
-```bash
-brew install --formula https://raw.githubusercontent.com/RenderCoder/plane-cli/main/Formula/plane-cli.rb
-```
-
-也可以将本仓库显式添加为本地 tap 后安装：
+Homebrew 7 需要显式 tap URL（本仓库不叫 `homebrew-plane-cli`），并且要对第三方 Formula 执行 `brew trust`：
 
 ```bash
 brew tap RenderCoder/plane-cli https://github.com/RenderCoder/plane-cli
-brew install plane-cli
+brew trust --tap rendercoder/plane-cli
+brew install --formula rendercoder/plane-cli/plane-cli
 ```
 
 Homebrew 提供的是独立二进制文件，运行时不需要 Bun。验证安装：
