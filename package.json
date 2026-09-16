@@ -1,0 +1,16 @@
+{
+  "name": "plane-cli",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-agent-friendly Plane CLI",
+  "type": "module",
+  "bin": {
+    "plane-cli": "./src/cli.ts"
+  },
+  "scripts": {
+    "plane-cli": "bun run src/cli.ts",
+    "test": "bun test",
+    "build": "bun build --compile --outfile dist/plane-cli src/cli.ts",
+    "install:global": "bun run src/cli.ts install"
+  }
+}

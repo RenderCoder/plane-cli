@@ -1,0 +1,29 @@
+class PlaneCli < Formula
+  desc "CLI for Silicon Alchemists' customized Plane deployment"
+  homepage "https://github.com/RenderCoder/plane-cli"
+  version "__VERSION__"
+  license "MIT"
+
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/RenderCoder/plane-cli/releases/download/plane-cli-v__VERSION__/plane-cli-darwin-arm64.tar.gz"
+      sha256 "__DARWIN_ARM64_SHA256__"
+    else
+      url "https://github.com/RenderCoder/plane-cli/releases/download/plane-cli-v__VERSION__/plane-cli-darwin-x64.tar.gz"
+      sha256 "__DARWIN_X64_SHA256__"
+    end
+  end
+
+  on_linux do
+    url "https://github.com/RenderCoder/plane-cli/releases/download/plane-cli-v__VERSION__/plane-cli-linux-x64.tar.gz"
+    sha256 "__LINUX_X64_SHA256__"
+  end
+
+  def install
+    bin.install "plane-cli"
+  end
+
+  test do
+    assert_match version.to_s, shell_output("#{bin}/plane-cli --version")
+  end
+end
