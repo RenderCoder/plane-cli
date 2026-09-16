@@ -25,7 +25,7 @@ plane-cli --help
 
 Release maintainers tag versions as `plane-cli-vX.Y.Z`, matching the root `package.json` version. The GitHub Actions workflow runs tests and builds standalone archives for Linux, Intel macOS, and Apple Silicon macOS. After the GitHub release is created, copy each published SHA-256 value into [`Formula/plane-cli.rb.template`](Formula/plane-cli.rb.template) and publish the completed Formula as `Formula/plane-cli.rb` in this repository.
 
-The skill describes when to use Plane and the catalog-cache practice. This CLI is the call surface. Run `plane-cli --help` for commands and flags. Do not teach agents raw REST paths.
+Run `plane-cli --help` for commands and flags.
 
 ## Build from source
 
