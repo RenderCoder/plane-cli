@@ -30,4 +30,3 @@ class PlaneCli < Formula
     assert_match version.to_s, shell_output("#{bin}/plane-cli --version")
   end
 end
-
